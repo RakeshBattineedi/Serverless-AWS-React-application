@@ -75,9 +75,9 @@ class App extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.invoices.length === 0 ? (
-                  <tr><td colSpan="9">All caught up!</td></tr>
-                ) : (
+                {this.state.invoices.length !== 0 ? (
+                  
+                
                   this.state.invoices.map((invoice) => (
                     
                       <tr key={invoice.id}>
@@ -124,7 +124,8 @@ class App extends Component {
                       </tr>
                       ))
                   
-                )}
+                ): (<tr><td colSpan="9">All caught up!</td></tr>)
+              }
               </tbody>
             </Table>
           </div>
