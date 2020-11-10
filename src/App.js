@@ -20,7 +20,7 @@ class App extends Component {
     const response = await axios.get("/invoices");
     //const body = await response.json();
     this.setState({ invoices: response.data, isLoading: false });
-    //console.log(this.state.invoices);
+    console.log(this.state.invoices, response);
   }
 
   async approveInvoice(id, Des) {
