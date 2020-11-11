@@ -17,7 +17,7 @@ class App extends Component {
   this.approveInvoice = this.approveInvoice.bind(this);
   };
   async componentDidMount() {
-    const response = await axios.get("/invoices");
+    const response = await axios.get("https://8m7elvex5i.execute-api.us-east-1.amazonaws.com/dev/invoices");
     //const body = await response.json();
     this.setState({ invoices: response.data, isLoading: false });
     console.log(this.state.invoices, response);
@@ -25,7 +25,7 @@ class App extends Component {
 
   async approveInvoice(id, Des) {
   //  let idnum =  parseInt(id);
-   let response = await axios.put("/invoices", {
+   let response = await axios.put("https://8m7elvex5i.execute-api.us-east-1.amazonaws.com/dev/invoices", {
         "resource": "",
         // "path": "",
         headers : { 
